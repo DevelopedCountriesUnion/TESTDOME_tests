@@ -1,8 +1,8 @@
-Refactor the AlertService and AlertDAO classes:
-1. Create a new interface, named IAlertDAO, that contains the same methods as AlertDAO.
-2. AlertDAO should implement the IAlertDAO interface.
-3. AlertService should have a constructor that accepts IAlertDAO.
-4. The RaiseAlert and GetAlertTime methods should use the object passed through the constructor.
+//Refactor the AlertService and AlertDAO classes:
+//1. Create a new interface, named IAlertDAO, that contains the same methods as AlertDAO.
+//2. AlertDAO should implement the IAlertDAO interface.
+//3. AlertService should have a constructor that accepts IAlertDAO.
+//4. The RaiseAlert and GetAlertTime methods should use the object passed through the constructor.
 
 ===============================================================================
 
