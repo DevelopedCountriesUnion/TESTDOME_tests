@@ -4,8 +4,45 @@
 //3. AlertService should have a constructor that accepts IAlertDAO.
 //4. The RaiseAlert and GetAlertTime methods should use the object passed through the constructor.
 
+// Beginning codes 
+using System.Collections.Generic;
+using System;
+
+public class AlertService	
+{
+    private readonly AlertDAO storage = new AlertDAO();
+	
+    public Guid RaiseAlert()
+    {
+        return this.storage.AddAlert(DateTime.Now);
+    }
+	
+    public DateTime GetAlertTime(Guid id)
+    {
+        return this.storage.GetAlert(id);
+    }	
+}
+	
+public class AlertDAO
+{
+    private readonly Dictionary<Guid, DateTime> alerts = new Dictionary<Guid, DateTime>();
+	
+    public Guid AddAlert(DateTime time)
+    {
+        Guid id = Guid.NewGuid();
+        this.alerts.Add(id, time);
+        return id;
+    }
+	
+    public DateTime GetAlert(Guid id)
+    {
+        return this.alerts[id];
+    }	
+}
+
 ===============================================================================
 
+//Solution codes 3/3 passed
 using System.Collections.Generic;
 using System;
 
